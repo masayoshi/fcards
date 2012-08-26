@@ -1,4 +1,6 @@
 Fcards::Application.routes.draw do
+  resources :decks
+
   devise_for :users
 
   match '/contact', to: 'static_pages#contact'
