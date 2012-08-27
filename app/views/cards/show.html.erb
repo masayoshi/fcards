@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Front:</b>
+  <%= @card.front %>
+</p>
+
+<p>
+  <b>Back:</b>
+  <%= @card.back %>
+</p>
+
+<p>
+  <b>Next study datetime:</b>
+  <%= @card.next_study_datetime %>
+</p>
+
+
+<%= link_to 'Edit', edit_deck_card_path(@deck, @card) %> |
+<%= link_to 'Back', deck_cards_path(@deck) %>

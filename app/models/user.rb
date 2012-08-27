@@ -26,5 +26,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  has_many :decks
+  has_many :decks, dependent: :destroy
 end

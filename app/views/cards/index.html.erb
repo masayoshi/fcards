@@ -1,0 +1,29 @@
+<h1>Listing cards</h1>
+
+<table>
+  <tr>
+    <th>Front</th>
+    <th>Back</th>
+    <th>Next study datetime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cards.each do |card| %>
+  <tr>
+    <td><%= card.front %></td>
+    <td><%= card.back %></td>
+    <td><%= card.next_study_datetime %></td>
+    <td><%= link_to 'Show', deck_card_path(@deck, card) %></td>
+    <td><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></td>
+    <td><%= link_to 'Destroy', deck_card_path(@deck, card), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Card', new_deck_card_path(@deck) %>
+
+<%= will_paginate @cards %>
