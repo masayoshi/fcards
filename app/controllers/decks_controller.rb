@@ -82,4 +82,52 @@ class DecksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def study
+    @deck = current_user.decks.find(params[:id])
+    @cards_count = @deck.cards.need_to_study.count
+    @card = @deck.cards.need_to_study.first
+  end
+
+  def again_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.study_again!
+    redirect_to study_deck_url(@deck)
+  end
+
+  def study_tommorow_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.study_tommorow!
+    redirect_to study_deck_url(@deck)
+  end
+
+  def study_three_days_later_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.study_three_days_later!
+    redirect_to study_deck_url(@deck)
+  end
+
+  def study_a_week_later_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.study_a_week_later!
+    redirect_to study_deck_url(@deck)
+  end
+
+  def study_a_month_later_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.study_a_month_later!
+    redirect_to study_deck_url(@deck)
+  end
+
+  def never_study_current_card_and_fetch_next
+    @deck = current_user.decks.find(params[:id])
+    @card = @deck.cards.need_to_study.first
+    @card.never_study!
+    redirect_to study_deck_url(@deck)
+  end
 end

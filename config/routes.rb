@@ -2,6 +2,13 @@ Fcards::Application.routes.draw do
 
   resources :decks do
     resources :cards
+    get 'study', on: :member
+    get 'again_current_card_and_fetch_next', as: "again_this_card", on: :member
+    get 'study_tommorow_current_card_and_fetch_next', as: "tommorow_this_card", on: :member
+    get 'study_three_days_later_current_card_and_fetch_next', as: "three_days_this_card", on: :member
+    get 'study_a_week_later_current_card_and_fetch_next', as: "a_week_this_card", on: :member
+    get 'study_a_month_later_current_card_and_fetch_next', as: "a_month_this_card", on: :member
+    get 'never_study_current_card_and_fetch_next', as: "never_this_card", on: :member
   end
 
   devise_for :users

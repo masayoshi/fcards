@@ -9,6 +9,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @decks.each do |deck| %>
@@ -20,6 +21,7 @@
     <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
     <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <td><%= link_to 'Cards', deck_cards_path(deck) %></td>
+    <td><%= link_to 'Study', study_deck_path(deck) %></td>
   </tr>
 <% end %>
 </table>
