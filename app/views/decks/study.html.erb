@@ -1,18 +1,26 @@
-
-<%= @cards_count %>
-
-<p>
-  <b>front:</b>
-  <%= @card.front %>
-</p>
-
-<p>
-  <b>back:</b>
-  <%= @card.back %>
-</p>
-<%= link_to 'Again', again_this_card_deck_path(@deck) %> |
-<%= link_to 'Hard', tommorow_this_card_deck_path(@deck) %> |
-<%= link_to 'Medium', three_days_this_card_deck_path(@deck) %> |
-<%= link_to 'Easy', a_week_this_card_deck_path(@deck) %> |
-<%= link_to 'Almost Done', a_month_this_card_deck_path(@deck) %> |
-<%= link_to 'Done', never_this_card_deck_path(@deck) %> |
+<% provide(:title, @card.front) %>
+<div class="row">
+  <div class="span12">
+    <p><span class="label label-info">Remaining Cards</span> <strong><%= @cards_count %></strong></p>
+    <hr>
+    <div class="well">
+      <h1><%= @card.front %></h1><br>
+    <button type="button" class="btn" data-toggle="collapse" data-target="#back">
+      Show Answer
+    </button>
+  </div>
+    <div id="back" class="collapse">
+    <div class="well">
+      <h2><%= @card.back %></h2>
+  </div>
+    </div>
+    <p>
+    <%= link_to 'Again', again_this_card_deck_path(@deck), class: "btn btn-danger" %>
+    <%= link_to 'Hard', tommorow_this_card_deck_path(@deck), class: "btn btn-warning" %>
+    <%= link_to 'Medium', three_days_this_card_deck_path(@deck), class: "btn btn-success" %>
+    <%= link_to 'Easy', a_week_this_card_deck_path(@deck), class: "btn btn-info" %>
+    <%= link_to 'Almost Done', a_month_this_card_deck_path(@deck), class: "btn btn-primary" %>
+    <%= link_to 'Done', never_this_card_deck_path(@deck), class: "btn btn-inverse" %>
+    </p>
+  </div>
+</div>
