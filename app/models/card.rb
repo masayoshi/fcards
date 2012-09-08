@@ -18,7 +18,7 @@ class Card < ActiveRecord::Base
   validates :front, presence: true, length: { maximum: 1000 }
   validates :back, presence: true, length: { maximum: 1000 }
 
-  scope :need_to_study, where("next_study_datetime < ?", Time.now).order("next_study_datetime asc")
+  scope :need_to_study, where("next_study_datetime < ?", Time.now).order("next_study_datetime desc")
 
   def study_again!
     self.next_study_datetime = DateTime.now + 20.minutes
