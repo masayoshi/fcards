@@ -70,6 +70,7 @@ class Card < ActiveRecord::Base
   end
 
   def never_study!
+    self.next_study_datetime = DateTime.now + 999.years
     self.status = STATUS_DONE
     self.study_count += 1
     save!
