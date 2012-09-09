@@ -30,7 +30,7 @@ class Card < ActiveRecord::Base
   STATUS_ALMOST_DONE = 5
   STATUS_DONE = 9
 
-  scope :need_to_study, where("status != ?", STATUS_DONE ).order("next_study_datetime DESC")
+  scope :need_to_study, where("next_study_datetime < ?", Time.now ).order("next_study_datetime DESC")
   scope :done, where("status = ?", STATUS_DONE )
   default_scope order: 'id ASC'
 
