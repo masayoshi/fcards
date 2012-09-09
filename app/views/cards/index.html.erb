@@ -1,29 +1,41 @@
-<h1>Listing cards</h1>
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>Listing cards</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Front</th>
+          <th>Back</th>
+          <th>Study Count</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cards.each do |card| %>
+          <tr>
+            <td><%= card.id %></td>
+            <td><%= card.front %></td>
+            <td><%= card.back %></td>
+            <td><%= display_card_study_count card.study_count %></td>
+            <td><%= display_card_status card.status %></td>
+            <td><%= link_to 'Show', deck_card_path(@deck, card), class: "btn" %></td>
+            <td><%= link_to 'Edit', edit_deck_card_path(@deck, card), class: "btn" %></td>
+            <td><%= link_to 'Destroy', deck_card_path(@deck, card), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<table>
-  <tr>
-    <th>Front</th>
-    <th>Back</th>
-    <th>Next study datetime</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <br />
 
-<% @cards.each do |card| %>
-  <tr>
-    <td><%= card.front %></td>
-    <td><%= card.back %></td>
-    <td><%= card.next_study_datetime %></td>
-    <td><%= link_to 'Show', deck_card_path(@deck, card) %></td>
-    <td><%= link_to 'Edit', edit_deck_card_path(@deck, card) %></td>
-    <td><%= link_to 'Destroy', deck_card_path(@deck, card), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <%= link_to 'New Card', new_deck_card_path(@deck) %>
 
-<br />
-
-<%= link_to 'New Card', new_deck_card_path(@deck) %>
-
-<%= will_paginate @cards %>
+    <%= will_paginate @cards %>
+  </div>
+</div>

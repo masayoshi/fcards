@@ -2,12 +2,12 @@
 #
 # Table name: decks
 #
-#  id          :integer          not null, primary key
+#  id          :integer          primary key
 #  title       :string(255)
 #  description :text
 #  user_id     :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  created_at  :timestamp        not null
+#  updated_at  :timestamp        not null
 #
 
 class Deck < ActiveRecord::Base
@@ -17,4 +17,12 @@ class Deck < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 100 }
   validates :description, length: { maximum: 250 }
   has_many :cards, dependent: :destroy
+
+  def progress
+    if self.cards.count > 0
+      100 * self.cards.done.count / self.cards.count
+    else
+      return 0
+    end
+  end
 end

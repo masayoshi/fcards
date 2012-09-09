@@ -5,6 +5,7 @@ gem 'heroku'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
 gem 'taps'
 
 # Gems used only for assets and not required

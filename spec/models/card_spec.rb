@@ -2,13 +2,15 @@
 #
 # Table name: cards
 #
-#  id                  :integer          not null, primary key
+#  id                  :integer          primary key
 #  front               :text
 #  back                :text
-#  next_study_datetime :datetime
+#  next_study_datetime :timestamp
 #  deck_id             :integer
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  created_at          :timestamp        not null
+#  updated_at          :timestamp        not null
+#  status              :integer          default(0)
+#  study_count         :integer          default(0)
 #
 
 require 'spec_helper'
