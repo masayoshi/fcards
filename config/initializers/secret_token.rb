@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Fcards::Application.config.secret_token = 'aa50ac4b76f7f73ceb367fa96b7c8f19152a590cd65a52d528aba3ee1a26022313d7e1745a96b1e74ea2a98341f7011ce046447d86960a905991001653b99c44'
+Fcards::Application.config.secret_token = '7671d35026863d4ddf0a937824705ff5db3adb804d3b85354f1ca967f80f63f6fba7978a3b89516d6e05e6f9bf32ede16d0ebe41ab0e9047b8baa5909a837e85'
