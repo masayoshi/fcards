@@ -3,6 +3,17 @@
     <div class="page-header">
       <h1>Listing cards</h1>
     </div>
+    <%= form_tag deck_cards_path(@deck), method: :get, class: "form-search" do %>
+      <%= search_field_tag :keyword , nil, placeholder: "Keyword", class: "input-medium search-query"%>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
+    <p>
+    <% if @keyword.present? %>
+      <strong>Keyword: </strong><span class="label"><%= @keyword %></span>
+      <strong>Results: </strong><span class="badge"><%= @cards.count %></span>
+    <% end %>
+    <%= link_to 'New Card', new_deck_card_path(@deck) %>
+    </p>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -34,7 +45,6 @@
 
     <br />
 
-    <%= link_to 'New Card', new_deck_card_path(@deck) %>
 
     <%= will_paginate @cards %>
   </div>

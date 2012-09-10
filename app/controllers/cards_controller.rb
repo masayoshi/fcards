@@ -4,7 +4,13 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = @deck.cards.paginate(page: params[:page])
+
+    if params[:keyword].present?
+      @keyword = params[:keyword]
+      @cards = @deck.cards.search(@keyword).paginate(page: params[:page])
+    else
+      @cards = @deck.cards.paginate(page: params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -32,6 +32,10 @@ class Card < ActiveRecord::Base
 
   scope :need_to_study, where("next_study_datetime < ?", Time.now ).order("next_study_datetime DESC")
   scope :done, where("status = ?", STATUS_DONE )
+  scope :search, lambda { |keyword|
+    where 'front like :q or back like :q', q: "%#{keyword}%"
+  }
+
   default_scope order: 'id ASC'
 
   def study_again!
