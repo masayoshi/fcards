@@ -50,14 +50,24 @@ describe Card do
       it { should_not be_valid }
     end
 
-    context "when front is over 1000 caracters" do
-      before { @card.front = "a" * 1001 }
+    context "when front is over 1500 caracters" do
+      before { @card.front = "a" * 1501 }
       it { should_not be_valid }
     end
 
-    context "when back is over 1000 caracters" do
-      before { @card.front = "a" * 1001 }
+    context "when front is under 1500 caracters" do
+      before { @card.front = "a" * 1500 }
+      it { should be_valid }
+    end
+
+    context "when back is over 1500 caracters" do
+      before { @card.front = "a" * 1501 }
       it { should_not be_valid }
+    end
+
+    context "when back is under 1500 caracters" do
+      before { @card.front = "a" * 1500 }
+      it { should be_valid }
     end
   end
 end

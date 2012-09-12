@@ -17,8 +17,8 @@ class Card < ActiveRecord::Base
   attr_accessible :back, :front, :next_study_datetime
   belongs_to :deck
   validates :deck_id, presence: true
-  validates :front, presence: true, length: { maximum: 1000 }
-  validates :back, presence: true, length: { maximum: 1000 }
+  validates :front, presence: true, length: { maximum: 1500 }
+  validates :back, presence: true, length: { maximum: 1500 }
 
   self.per_page = 100
 

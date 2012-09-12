@@ -6,37 +6,23 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
+          <th></th>
+          <th></th>
           <th>Title</th>
           <th>Description</th>
           <th>Cards Number</th>
           <th>Progress</th>
           <th></th>
           <th></th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
-    </tbody>
+      <tbody>
+        <%= render @decks %>
+      </tbody>
+    </table>
 
-    <% @decks.each do |deck| %>
-      <tr>
-        <td><%= link_to 'Study this deck', study_deck_path(deck), class: "btn btn-primary" %></td>
-        <td><%= deck.title %></td>
-        <td><%= deck.description %></td>
-        <td><%= content_tag(:span, deck.cards.count, class: "label") %></td>
-        <td><%= content_tag(:span, deck.progress.to_s + "%", class: "label label-success") %></td>
-        <td><%= link_to 'Show', deck , class: "btn" %></td>
-        <td><%= link_to 'Edit', edit_deck_path(deck), class: "btn" %></td>
-        <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-        <td><%= link_to 'Show Cards', deck_cards_path(deck), class: "btn btn-info" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <br />
 
-<br />
-
-<%= link_to 'New Deck', new_deck_path %>
-</div>
+    <%= link_to 'New Deck', new_deck_path %>
+  </div>
 </div>

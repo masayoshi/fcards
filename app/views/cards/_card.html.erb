@@ -1,0 +1,10 @@
+<tr>
+  <td><%= card.id %></td>
+  <td><%= truncate(card.front, length:80) %></td>
+  <td><%= truncate(card.back, length:80) %></td>
+  <td><%= display_card_study_count card.study_count %></td>
+  <td><%= display_card_status card.status %></td>
+  <td><%= link_to 'Show', deck_card_path(@deck, card), class: "btn btn-mini" %></td>
+  <td><%= link_to 'Edit', edit_deck_card_path(@deck, card), class: "btn btn-mini" %></td>
+  <td><%= link_to 'Destroy', deck_card_path(@deck, card), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini btn-danger" %></td>
+</tr>

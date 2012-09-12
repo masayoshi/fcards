@@ -28,18 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @cards.each do |card| %>
-          <tr>
-            <td><%= card.id %></td>
-            <td><%= card.front %></td>
-            <td><%= card.back %></td>
-            <td><%= display_card_study_count card.study_count %></td>
-            <td><%= display_card_status card.status %></td>
-            <td><%= link_to 'Show', deck_card_path(@deck, card), class: "btn" %></td>
-            <td><%= link_to 'Edit', edit_deck_card_path(@deck, card), class: "btn" %></td>
-            <td><%= link_to 'Destroy', deck_card_path(@deck, card), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-          </tr>
-        <% end %>
+        <%= render @cards %>
       </tbody>
     </table>
 
