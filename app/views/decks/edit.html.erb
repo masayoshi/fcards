@@ -1,7 +1,13 @@
-<h1>Editing deck</h1>
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>Editing Deck</h1>
+    </div>
+    <%= render 'form' %>
 
-<%= render 'form' %>
-<%= link_to 'Destroy', @deck, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini btn-danger" %>
+    <%= link_to 'Destroy', @deck, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 
-<%= link_to 'Show', @deck %> |
-<%= link_to 'Back', decks_path %>
+    <%= link_to 'Show', @deck, class: "btn" %>
+    <%= link_to 'Back', decks_path, class: "btn"  %>
+  </div>
+</div>

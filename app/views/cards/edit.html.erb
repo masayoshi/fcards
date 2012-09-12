@@ -1,6 +1,11 @@
-<h1>Editing card</h1>
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>Editing Card</h1>
+    </div>
+    <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', deck_card_path(@deck, @card) %> |
-<%= link_to 'Back', deck_cards_path(@deck) %>
+    <%= link_to 'Show', deck_card_path(@deck, @card), class: "btn" %>
+    <%= link_to 'Back', deck_cards_path(@deck), class: "btn"  %>
+  </div>
+</div>

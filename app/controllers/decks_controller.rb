@@ -46,7 +46,7 @@ class DecksController < ApplicationController
 
     respond_to do |format|
       if @deck.save
-        format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
+        format.html { redirect_to decks_path , notice: 'Deck was successfully created.' }
         format.json { render json: @deck, status: :created, location: @deck }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class DecksController < ApplicationController
 
     respond_to do |format|
       if @deck.update_attributes(params[:deck])
-        format.html { redirect_to @deck, notice: 'Deck was successfully updated.' }
+        format.html { redirect_to decks_path , notice: 'Deck was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -3,6 +3,7 @@
     <div class="page-header">
       <h1>Listing decks</h1>
     </div>
+    <%= link_to 'New Deck', new_deck_path %>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -20,9 +21,5 @@
         <%= render @decks %>
       </tbody>
     </table>
-
-    <br />
-
-    <%= link_to 'New Deck', new_deck_path %>
   </div>
 </div>

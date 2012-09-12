@@ -1,6 +1,7 @@
 <%= form_for(@deck) do |f| %>
   <% if @deck.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-block alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
       <h2><%= pluralize(@deck.errors.count, "error") %> prohibited this deck from being saved:</h2>
 
       <ul>
@@ -11,15 +12,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "Type title...", class: "input-xxlarge" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, placeholder: "Type description...", rows: 3, class: "input-xxlarge" %>
+  <br />
+  <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>
