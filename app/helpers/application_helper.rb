@@ -39,4 +39,8 @@ module ApplicationHelper
       content_tag(:span, card_study_count, class: "badge badge-important")
     end
   end
+
+  def link_to_eijiro word
+    link_to "Eijiro", "http://eow.alc.co.jp/search?q=" + word , target: "_blank"
+  end
 end
