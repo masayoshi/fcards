@@ -14,6 +14,7 @@
     <% end %>
     <%= link_to 'New Card', new_deck_card_path(@deck) %>
     </p>
+    <%= will_paginate @cards %>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -33,7 +34,6 @@
     </table>
 
     <br />
-
 
     <%= will_paginate @cards %>
   </div>
