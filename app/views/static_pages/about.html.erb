@@ -1,3 +1,45 @@
 <% provide :title, 'About'%>
-<h1>About</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div class="row">
+  <div class="span12">
+    <div class="page-header">
+      <h1>About</h1>
+    </div>
+    <h2>What is F-CARDS?</h2>
+    <p>
+    F-CARDS is a flash card web application which helps you remembering thing.<br />
+    It is designed to let you learn things based on <%= link_to "Spaced Repetition System", "http://en.wikipedia.org/wiki/Spaced_repetition", target: "_blank" %>.<br />
+    <blockquote>
+      <p>
+      The forgetting curve hypothesizes the decline of memory retention in time. A related concept is the strength of memory that refers to the durability that memory traces in the brain. The stronger the memory, the longer period of time that a person is able to recall it. A typical graph of the forgetting curve purports to show that humans tend to halve their memory of newly learned knowledge in a matter of days or weeks unless they consciously review the learned material.
+      </p>
+      <small>Forgetting curve - Wikipedia, the free encyclopedia</small>
+    </blockquote>
+    <%= link_to image_tag("http://upload.wikimedia.org/wikipedia/commons/4/4e/ForgettingCurve.svg", alt: "Forgetting Curve", class: "img-polaroid"), "http://en.wikipedia.org/wiki/Forgetting_curve", target: "_blank" %>
+    </p>
+    <h2>How to use it?</h2>
+    <h4>1. Sign up and Sing in</h4>
+    <p><%= link_to "Sign up for a free acount", new_user_registration_path %> and sign in.</p>
+    <h4>2. Create decks and add cards</h4>
+    <p>You can create up to 3 decks and 1000 cards for each deck.</p>
+    <h4>3. Study the deck</h4>
+    <p>When you push "Study Deck" button, you can study cards which should be study then. Please see below helps.</p>
+    <div class="well">
+      <dl>
+        <dt>Show</dt>
+        <dd>Show the answer</dd>
+        <dt>Again</dt>
+        <dd>Study current card 20 minites later</dd>
+        <dt>Hard</dt>
+        <dd>Study current card 1 day (24 hours) later</dd>
+        <dt>Medium</dt>
+        <dd>Study current card 3 days later</dd>
+        <dt>Easy</dt>
+        <dd>Study current card 1 week later</dd>
+        <dt>Almost done</dt>
+        <dd>Study current card 1 month later</dd>
+        <dt>Done</dt>
+        <dd>Never study current card</dd>
+      </dl>
+    </div>
+  </div>
+</div>

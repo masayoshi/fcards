@@ -1,2 +1,40 @@
-<h1>f-cards</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="well">
+  <h1>F-CARDS</h1>
+  <p class="lead">
+  F-CARDS is a Spaced Repetition System which makes remembering things easily.<br />
+  <%= link_to "Sign up for a free acount now !", new_user_registration_path %>
+  <%= render 'social_buttons' if Rails.env.production? %>
+  </p>
+</div>
+<div class="row">
+  <div class="span4">
+    <h2><i class="icon-ok-sign icon-large"></i> Remember efficiently</h2>
+    <p>F-CARDS is designed to let you learn things based on <%= link_to "Spaced Repetition System", "http://en.wikipedia.org/wiki/Spaced_repetition", target: "_blank" %>.</p>
+    <p>You can use it for ...</p>
+    <ul>
+      <li>Learning a language</li>
+      <li>Preparing for exams</li>
+      <li>Memorizing long speach</li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h2><i class="icon-globe icon-large"></i> Study everywhere</h2>
+    <p>You can study anywhere, anytime, and by any device.</p>
+    <p>Off cource, you can share study status.</p>
+    <p>F-CARDS supports below devices.</p>
+    <ul>
+      <li>iPhone,iPad</li>
+      <li>Android</li>
+      <li>PC etc...</li>
+    </ul>
+  </div>
+  <div class="span4">
+    <h2><i class="icon-th-list icon-large"></i> Manage decks easily</h2>
+    <p>You can manage decks and cards easily.</p>
+    <p>F-CARDS has features to support managing decks/cards.</p>
+    <ul>
+      <li>Import/Export cards as csv format</li>
+      <li>Search cards by keyword</li>
+    </ul>
+  </div>
+</div>
