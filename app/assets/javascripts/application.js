@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 // Loads all Bootstrap javascripts
-//= require bootstrap
+//= require bootstrap-dropdown
+//= require bootstrap-collapse
+//= require bootstrap-tooltip
+jQuery( function($) {
+    $("a[rel=tooltip]").tooltip()
+});
