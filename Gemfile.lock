@@ -213,6 +213,7 @@ DEPENDENCIES
   guard-spork
   heroku
   jquery-rails
+  nokogiri
   pg
   rails (= 3.2.8)
   rb-fsevent
