@@ -20,12 +20,12 @@
         </div>
       </div>
       <p>
-      <%= link_to 'Again', again_this_card_deck_path(@deck), class: "btn btn-danger", title: "20 minutes later", rel: "tooltip" %>
-      <%= link_to 'Hard', tommorow_this_card_deck_path(@deck), class: "btn btn-warning", title: "1 day later", rel: "tooltip" %>
-      <%= link_to 'Medium', three_days_this_card_deck_path(@deck), class: "btn btn-success", title: "3 days later", rel: "tooltip" %>
-      <%= link_to 'Easy', a_week_this_card_deck_path(@deck), class: "btn btn-info", title: "1 week later", rel: "tooltip" %>
-      <%= link_to 'Almost Done', a_month_this_card_deck_path(@deck), class: "btn btn-primary", title: "1 month later", rel: "tooltip" %>
-      <%= link_to 'Done', never_this_card_deck_path(@deck), class: "btn btn-inverse", title: "Never study again", rel: "tooltip" %>
+      <%= link_to 'Again', again_this_card_deck_path(@deck), class: "btn btn-danger" %>
+      <%= link_to 'Hard', tommorow_this_card_deck_path(@deck), class: "btn btn-warning" %>
+      <%= link_to 'Medium', three_days_this_card_deck_path(@deck), class: "btn btn-success" %>
+      <%= link_to 'Easy', a_week_this_card_deck_path(@deck), class: "btn btn-info" %>
+      <%= link_to 'Almost Done', a_month_this_card_deck_path(@deck), class: "btn btn-primary" %>
+      <%= link_to 'Done', never_this_card_deck_path(@deck), class: "btn btn-inverse" %>
       </p>
     <% else %>
       <h1>No card to study! Wow!</h1>
