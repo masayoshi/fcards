@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'heroku'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
