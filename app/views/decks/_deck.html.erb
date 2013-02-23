@@ -1,6 +1,7 @@
 <tr>
   <td><%= link_to 'Study Deck', study_deck_path(deck), class: "btn btn-mini btn-primary" %></td>
   <td><%= link_to 'Show Cards', deck_cards_path(deck), class: "btn btn-mini btn-info" %></td>
+  <td><%= link_to 'Export Cards', deck_cards_path(deck, format: "csv"), class: "btn btn-mini btn-info" %></td>
   <td><%= link_to truncate(deck.title, length: 80), deck %></td>
   <td><%= truncate(deck.description, length: 80) %></td>
   <td><%= content_tag(:span, deck.cards.count, class: "label") %></td>

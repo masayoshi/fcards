@@ -15,6 +15,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cards }
+      format.csv { send_data @cards.to_csv }
     end
   end
 
