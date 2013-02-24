@@ -8,7 +8,7 @@ gem 'bootstrap-will_paginate'
 gem 'taps'
 gem 'font-awesome-sass-rails'
 gem 'nokogiri'
-gem 'newrelic_rpm'
+gem "newrelic_rpm", "~> 3.5.5.38"
 
 # Gems used only for assets and not required
 # in production environments by default.
